@@ -1,5 +1,5 @@
 config.php
 .htaccess
-assets/photo_uploads/*
+assets/photo_upload/*
 cache/smarty/*
 .DS_Store
