@@ -1,0 +1,23 @@
+body {
+	padding-top: 60px;
+}
+
+span.pager_right a, span.pager_left a {
+    display: inline-block;
+    line-height:2.5em;
+    padding: 0 10px;
+}
+
+span.pager_left {
+	float: left;
+	display: inline-block;
+  line-height:2.5em;
+  padding: 0 10px;
+}
+
+span.pager_right {
+	float: right;
+	display: inline-block;
+  line-height:2.5em;
+  padding: 0 10px;
+}

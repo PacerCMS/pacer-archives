@@ -12,11 +12,7 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 
 		<link rel="stylesheet" href="{$smarty.const.WEBROOT}/lib/bootstrap/bootstrap.css" type="text/css">
-		<style type="text/css">
-			body {
-				padding-top: 60px;
-			}
-		</style>
+		<link rel="stylesheet" href="{$smarty.const.WEBROOT}/assets/css/main.css" type="text/css">
 
 		<link rel="shortcut icon" href="{$smarty.const.WEBROOT}/assets/images/favicon.ico">
 
@@ -30,6 +26,7 @@
 					<a class="brand" href="{$smarty.const.WEBROOT}/">The Pacer Archives (2002 - 2006)</a>
 					<ul class="nav">
 						<li {if $Router->controller eq 'home'}class="active"{/if}><a href="{$smarty.const.WEBROOT}/">Home</a></li>
+						<li {if $Router->controller eq 'search'}class="active"{/if}><a href="{$smarty.const.WEBROOT}/search">Search</a></li>
 						<li {if $Router->controller eq 'about'}class="active"{/if}><a href="{$smarty.const.WEBROOT}/about">About</a></li>
 						<li {if $Router->controller eq 'contact'}class="active"{/if}><a href="{$smarty.const.WEBROOT}/contact">Contact</a></li>
 					</ul>
