@@ -24,6 +24,12 @@ if (isset($_GET['q'])):
 	// Declare search terms
 	$search = $db->quote('%' . $_GET['q'] . '%');
 
+	// Per Page
+	if (!isset($_GET['format']))
+		$limit = 25;
+	else
+		$limit = 1000;
+
 	// Run search
 	$search_query = "SELECT * FROM `articles` WHERE lower({$index}) LIKE lower({$search}) ORDER BY `issue_date` DESC, `section_name` ASC, `priority` ASC ";
 	$search_result_count = Article::glob('Article', $search_query);
@@ -31,12 +37,12 @@ if (isset($_GET['q'])):
 	// $Pager = new Pager($cur, $count, $link, $per_page);
 	$page_link = WEBROOT . '/search/?q=' . urlencode( $_GET['q']) . '&amp;index=' . urlencode($index_q) .'&amp;page=[#]';
 	$page = (isset($_GET['page'])) ? (int) $_GET['page'] : 1;
-	$Pager = new Pager($page, count($search_result_count), $page_link, 25 );
+	$Pager = new Pager($page, count($search_result_count), $page_link, $limit );
 	$Pager->wrapTag = '<li>';
 	$Smarty->assign('Pager', $Pager);
 	
 	$offset = ($Pager->getOffset() > -1) ? $Pager->getOffset() : 0;
-	$search_results = Article::glob('Article', $search_query . sprintf(' LIMIT %d OFFSET %d', 25, $offset) );
+	$search_results = Article::glob('Article', $search_query . sprintf(' LIMIT %d OFFSET %d', $limit, $offset) );
 	$Smarty->assign('search_results', $search_results);
 	
 	// Build pager
@@ -47,4 +53,9 @@ if (isset($_GET['q'])):
 
 endif;
 
-$Smarty->display('search.tpl');
+if (isset($_GET['format'])):
+	header('Content-type: application/json');
+	print json_encode($search_results);
+else:
+	$Smarty->display('search.tpl');
+endif;
