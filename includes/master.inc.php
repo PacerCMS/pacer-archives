@@ -18,7 +18,7 @@ if (isset($_GET['debug']) || DEBUG == true):
 endif;
 
 // Get full issue list for sidebar, grouped by volume.
-// $issue_data = Issue::glob('Issue', "SELECT * FROM `issues` ORDER BY `issue_date` ASC ");
+$issue_data = Issue::glob('Issue', "SELECT * FROM `issues` ORDER BY `issue_date` ASC ");
 foreach($issue_data as $key => $volume_content):
 	$volume = (int) $volume_content->volume;
 	$issue_date = $key;
