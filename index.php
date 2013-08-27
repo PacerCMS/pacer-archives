@@ -1,4 +1,5 @@
 <?php
+
 // Root classes
 require 'includes/master.inc.php';
 require DOCROOT . '/includes/class.routing.php';
@@ -11,11 +12,6 @@ $Router->map(WEBROOT . '/issue/:id', array('controller' => 'issue'));
 $Router->map(WEBROOT . '/article/:slug/:id', array('controller' => 'article'));
 $Router->map(WEBROOT . '/article/:id', array('controller' => 'article'));
 $Router->map(WEBROOT . '/sitemap.xml', array('controller' => 'sitemap', 'id' => ''));
-
-// $Router->map('/logout', array('controller' => 'auth', 'action' => 'logout'));
-// $Router->map('/signup', array('controller' => 'auth', 'action' => 'signup'));
-// $Router->map('/profile/:action', array('controller' => 'profile')); // will call controller "Profile" with dynamic method ":action()"
-// $Router->map('/users/:id', array('controller' => 'users'), array('id' => '[\d]{1,8}')); // define filters for the url parameters
 
 // Run rules
 $Router->default_routes();

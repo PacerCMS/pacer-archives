@@ -1,7 +1,7 @@
 {extends file='layout.tpl'}
 {block name=content}
 
-<div class="span12">
+<div class="col-md-12">
 
 	<div class="content">
 		<h1>Search</h1>

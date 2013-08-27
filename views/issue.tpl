@@ -1,7 +1,7 @@
 {extends file='layout.tpl'}
 {block name=content}
 
-<div class="span12">
+<div class="col-md-8">
 	
 	<div class="content">
 
@@ -13,7 +13,7 @@
 
 	<div class="row">
 
-		<div class="span8">
+		<div class="col-md-5">
 				<h2>{$section_name}</h2>
 				<ul>
 				{foreach $section_contents as $article}
@@ -22,7 +22,7 @@
 				</ul>
 		</div>
 	
-		<div class="span4">
+		<div class="col-md-3">
 			{if isset($issue_images[$section_name])}
 			<ul class="media-grid">
 			{foreach $issue_images[$section_name] as $i => $image}

@@ -11,7 +11,7 @@
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 
-		<link rel="stylesheet" href="{$smarty.const.WEBROOT}/lib/bootstrap/bootstrap.css" type="text/css">
+		<link rel="stylesheet" href="{$smarty.const.WEBROOT}/assets/libraries/bootstrap/css/bootstrap.css" type="text/css">
 		<link rel="stylesheet" href="{$smarty.const.WEBROOT}/assets/css/main.css" type="text/css">
 
 		<link rel="shortcut icon" href="{$smarty.const.WEBROOT}/assets/images/favicon.ico">
@@ -35,12 +35,11 @@
 	</head>
 
 	<body>
-
-		<div class="topbar">
-			<div class="topbar-inner">
-				<div class="container-fluid">
-					<a class="brand" href="{$smarty.const.WEBROOT}/">The Pacer Archives (2002 - 2006)</a>
-					<ul class="nav">
+		<div class="container">
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="{$smarty.const.WEBROOT}/">The Pacer Archives (2002 - 2006)</a>
+					<ul class="nav navbar-nav">
 						<li {if $Router->controller eq 'home'}class="active"{/if}><a href="{$smarty.const.WEBROOT}/">Home</a></li>
 						<li {if $Router->controller eq 'search'}class="active"{/if}><a href="{$smarty.const.WEBROOT}/search">Search</a></li>
 						<li {if $Router->controller eq 'about'}class="active"{/if}><a href="{$smarty.const.WEBROOT}/about">About</a></li>
@@ -48,11 +47,9 @@
 					</ul>
 					<p class="pull-right"></p>
 				</div>
-			</div>
-		</div>
+			</nav>
 
-		<div class="container-fluid">
-			<div class="sidebar">
+			<div class="col-md-4">
 				<div class="well">
 					{block name="sidebar"}
 
@@ -81,17 +78,17 @@
 
 				<!-- Example row of columns -->
 				<div class="row">
-					<div class="span6">
+					<div class="col-md-6">
 						<h2>Heading</h2>
 						<p>Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
 						<p><a class="btn" href="#">View details &raquo;</a></p>
 					</div>
-					<div class="span5">
+					<div class="col-md-5">
 						<h2>Heading</h2>
 						 <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
 						<p><a class="btn" href="#">View details &raquo;</a></p>
 				 </div>
-					<div class="span5">
+					<div class="col-md-5">
 						<h2>Heading</h2>
 						<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 						<p><a class="btn" href="#">View details &raquo;</a></p>
@@ -102,17 +99,17 @@
 
 				<!-- Example row of columns -->
 				<div class="row">
-					<div class="span6">
+					<div class="col-md-6">
 						<h2>Heading</h2>
 						<p>Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
 						<p><a class="btn" href="#">View details &raquo;</a></p>
 					</div>
-					<div class="span5">
+					<div class="col-md-5">
 						<h2>Heading</h2>
 						 <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
 						<p><a class="btn" href="#">View details &raquo;</a></p>
 				 </div>
-					<div class="span5">
+					<div class="col-md-5">
 						<h2>Heading</h2>
 						<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 						<p><a class="btn" href="#">View details &raquo;</a></p>

@@ -13,8 +13,3 @@ class SimplePHPSmarty extends Smarty {
 	}
 
 }
-
-$Smarty = new SimplePHPSmarty;
-if (isset($_GET['debug']) || DEBUG == true):
-	$Smarty->debugging = true;
-endif;
