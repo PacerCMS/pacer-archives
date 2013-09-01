@@ -29,7 +29,7 @@
 
 </div>
 
-<div class="cold-md-3">
+<div class="col-md-3">
 	<div style="width:160px;margin-left:auto;margin-right:auto;">
 		<script type="text/javascript">
 		google_ad_client = "ca-pub-3896111714575810";
