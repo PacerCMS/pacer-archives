@@ -14,9 +14,7 @@
 
 		{if $article->photo_src ne ''}
 		<div class="pull-right" style="width:255px; margin-left:2em;">
-			<ul class="media-grid">
-				<li style="text-align:center;"><a><img src="{$smarty.const.WEBROOT}/assets/{$article->photo_src}" alt="{$article->photo_credit}" style="max-width:250px;"/></a></ul>
-			</ul>
+			<div style="text-align:center;"><a><img src="{$smarty.const.WEBROOT}/assets/{$article->photo_src}" alt="{$article->photo_credit}" style="max-width:250px;"/></a></div>
 			<blockquote>
 			<p>{$article->photo_caption|nl2br}</p>
 			{if $article->photo_credit ne ''}<small>Credit: {$article->photo_credit}</small>{/if}

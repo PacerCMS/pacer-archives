@@ -14,23 +14,19 @@
 	<div class="row">
 
 		<div class="col-md-5">
-				<h2>{$section_name}</h2>
-				<ul>
-				{foreach $section_contents as $article}
-					<li><a href="{$smarty.const.WEBROOT}/article/{$article->title|@slugify}/{$article->id}">{$article->title}</a> by {$article->author_name}</li>
-				{/foreach}
-				</ul>
+			<h2>{$section_name}</h2>
+			<ul>
+			{foreach $section_contents as $article}
+				<li><a href="{$smarty.const.WEBROOT}/article/{$article->title|@slugify}/{$article->id}">{$article->title}</a> by {$article->author_name}</li>
+			{/foreach}
+			</ul>
 		</div>
 	
 		<div class="col-md-3">
 			{if isset($issue_images[$section_name])}
-			<ul class="media-grid">
 			{foreach $issue_images[$section_name] as $i => $image}
-				<li>
-					<a href="{$smarty.const.WEBROOT}/article/{$image.related_article}"><img src="{$smarty.const.WEBROOT}/assets/{$image.photo_src}" class="thumbnail" width="{if $i eq 0}210{else}90{/if}"></a>
-				</li>
+			<div><a href="{$smarty.const.WEBROOT}/article/{$image.related_article}"><img src="{$smarty.const.WEBROOT}/assets/{$image.photo_src}" class="thumbnail" width="{if $i eq 0}210{else}90{/if}"></a></div>
 			{/foreach}
-			</ul>
 			{/if}
 		</div>
 

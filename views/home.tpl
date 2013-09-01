@@ -1,7 +1,7 @@
 {extends file='layout.tpl'}
 {block name=content}
 
-<div class="col-md-8">
+<div class="col-md-9">
 
 <div class="hero-unit">
 	<h1>Welcome!</h1>
@@ -9,8 +9,6 @@
 	<p>&nbsp;</p>
 	<p><a class="btn primary large" href="about">Learn more &raquo;</a></p>
 </div>
-
-<div class="clear"></div>
 
 </div>
 
