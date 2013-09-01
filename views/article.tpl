@@ -29,7 +29,19 @@
 
 </div>
 
-<div style="clear:both;"></div>
+<div class="cold-md-3">
+	<div style="width:160px;margin-left:auto;margin-right:auto;">
+		<script type="text/javascript">
+		google_ad_client = "ca-pub-3896111714575810";
+		/* Pacer Archives - Right Side */
+		google_ad_slot = "8568980289";
+		google_ad_width = 160;
+		google_ad_height = 600;
+		</script>
+		<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> </script>
+	</div>
+</div>
+
 
 <script type="text/javascript">$('#volume-{$this_issue->volume}').show();</script>
 
