@@ -4,27 +4,30 @@
 <div class="col-md-12">
 
 	<div class="content">
-		<h1>Search</h1>
-		<form method="get">
+		<h1>Search the Archives</h1>
+		<form method="get" class="form-horizontal">
 			<fieldset>
-				<div class="clearfix">
-					<label>Search</label>
-					<div class="input">
-						<input type="search" class="" name="q" id="q" value="{if isset($smarty.get.q)}{$smarty.get.q|htmlentities}{/if}" />
-						<span class="help-inline">Case insensitive, but only matches whole words / phrases</span>
+				<legend>Enter your search criteria</legend>
+				<div class="form-group">
+					<label class="col-lg-2 control-label">Keyword/Phrase</label>
+					<div class="col-lg-10">
+						<input class="form-control" type="search" class="" name="q" id="q" value="{if isset($smarty.get.q)}{$smarty.get.q|htmlentities}{/if}" />
+						<span class="help-block">Case insensitive, but only matches whole words / phrases</span>
 					</div>
 				</div>
-				<div class="clearfix">
-					<label>Where</label>
-					<div class="input">
-						<select name="index" id="index">
+				<div class="form-group">
+					<label class="col-lg-2 control-label">Where</label>
+					<div class="col-lg-10">
+						<select class="form-control" name="index" id="index">
 							<option value="full_text" {if isset($smarty.get.index) && $smarty.get.index eq 'full_text'} selected="selected"{/if}>Article Text</option>
 							<option value="author_names" {if isset($smarty.get.index) && $smarty.get.index eq 'author_names'} selected="selected"{/if}>Author Names</option>
 						</select>
 					</div>
 				</div>
-				<div class="actions">
-					<input type="submit" value="Search" class="btn primary">
+				<div class="form-group">
+					<div class="col-lg-offset-2 col-lg-10">
+						<input type="submit" value="Search" class="btn btn-primary">
+					</div>
 				</div>
 			</fieldset>
 		</form>
