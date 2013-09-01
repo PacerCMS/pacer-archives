@@ -35,34 +35,41 @@
 	
 	{if isset($search_results)}
 	{if count($search_results) gt 0}
-	<h4>Search Results</h4>
+
+	<hr />
 	
-	<div class="pagination"><ul>{$Pager->advanced()}</ul></div>
+	<div>
+		<ul class="pagination">
+		{$Pager->advanced()}
+		</ul>
+	</div>
 	
-	<table class="zebra-striped">
+	<table class="table table-bordered table-striped">
+		<thead>
 		<tr>
 			<th>Title</th>
 			<th>Primary Author</th>
 			<th>Date</th>
 			<th>Section</th>
-	{foreach $search_results as $article}
+		</tr>
+		</thead>
+		<tbody>
+		{foreach $search_results as $article}
 		<tr>
 			<td><a href="{$smarty.const.WEBROOT}/article/{$article->title|@slugify}/{$article->id}">{$article->title}</td>
 			<td>{$article->author_name}</td>
 			<td>{$article->issue_date|date_format}</td>
 			<td>{$article->section_name}</td>
 		</tr>
-	{/foreach}
+		{/foreach}
+		</tbody>
 	</table>
 
-	<div class="pagination"><ul>{$Pager->advanced()}</ul></div>
-	
-	<!-- <div class="pagination">
-		<ul>
-			<li class="prev disabled"><a href="{}?offset=#">&larr; Previous</a></li>
-			<li class="next"><a href="?offset=#">Next &rarr;</a></li>
+	<div>
+		<ul class="pagination">
+		{$Pager->advanced()}
 		</ul>
-	</div> -->
+	</div>
 	
 	{else}
 		<h5>No articles matched your search criteria.</h5>

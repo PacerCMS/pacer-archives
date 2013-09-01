@@ -23,8 +23,8 @@
 		public $radius    = 10; 
 
 		// Tag to wrap page numbers with (advanced mode only)
-		// Use a complete tag such as "<span>" not just "span".
-		// This lets you do stuff like "<span class='foo'>"
+		// Use a complete tag such as "<li>" not just "li".
+		// This lets you do stuff like "<li class='foo'>"
 		public $wrapTag = "";
 
 		// HTML between page numbers (advanced mode only)
@@ -87,22 +87,26 @@
 			$this->calculate();
 			
 			if($this->cur == 1 && $this->numPages == 1)
-				return "{$this->prevMark} Page 1 of 1 {$this->nextMark}";
+				return "<li>{$this->prevMark} Page 1 of 1 {$this->nextMark}</li>";
 			elseif($this->cur == 1 && $this->numPages > 1)
 			{
 				$href = $this->makeLink($this->next);
-				return "<span class='pager_prev'>{$this->prevMark}</span> Page 1 of {$this->numPages} <a href='$href' class='pager_next'>{$this->nextMarkLinked}</a>";
+				return "<li class='pager_prev'>{$this->prevMark}</li>
+						<li>Page 1 of {$this->numPages}</li>
+						<li><a href='$href' class='pager_next'>{$this->nextMarkLinked}</a></li>";
 			}
 			elseif($this->cur == $this->numPages)
 			{
 				$href = $this->makeLink($this->prev);
-				return "<a href='$href' class='pager_prev'>{$this->prevMarkLinked}</a> Page {$this->cur} of {$this->numPages} <span class='pager_next'>{$this->nextMark}</span>";
+				return "<li><a href='$href' class='pager_prev'>{$this->prevMarkLinked}</a></li><li>Page {$this->cur} of {$this->numPages}</li><li class='pager_next'>{$this->nextMark}</li>";
 			}
 			else
 			{
 				$href_prev = $this->makeLink($this->prev);
 				$href_next = $this->makeLink($this->next);
-				return "<a href='$href_prev' class='pager_prev'>{$this->prevMarkLinked}</a> Page {$this->cur} of {$this->numPages} <a href='$href_next' class='pager_next'>{$this->nextMarkLinked}</a>";
+				return "<li><a href='$href_prev' class='pager_prev'>{$this->prevMarkLinked}</a></li>
+						<li>Page {$this->cur} of {$this->numPages}</li>
+						<li><a href='$href_next' class='pager_next'>{$this->nextMarkLinked}</a><li>";
 			}
 		}
 		
@@ -113,13 +117,15 @@
 			if($this->cur == 1)
 			{
 				$href = $this->makeLink($this->next);
-				return "<span class='pager_prev'>{$this->prevMark}</span> &nbsp; <a href='$href' class='pager_next'>{$this->nextMarkLinked}</a>";
+				return "<li class='pager_prev'>{$this->prevMark}</li>
+						<li><a href='$href' class='pager_next'>{$this->nextMarkLinked}</a></li>";
 			}
 			else
 			{
 				$href_prev = $this->makeLink($this->prev);
 				$href_next = $this->makeLink($this->next);
-				return "<a href='$href_prev' class='pager_prev'>{$this->prevMarkLinked}</a> &nbsp; <a href='$href_next' class='pager_next'>{$this->nextMarkLinked}</a>";
+				return "<li><a href='$href_prev' class='pager_prev'>{$this->prevMarkLinked}</a></li>
+						<li><a href='$href_next' class='pager_next'>{$this->nextMarkLinked}</a></li>";
 			}
 			
 		}
@@ -137,6 +143,7 @@
 			{
 				$opening_tag = $this->wrapTag;
 				$closing_tag = "</{$matches[1]}>";
+				$opening_tag_active = str_replace('>', ' class="active">', $opening_tag);
 			}
 			else
 			{
@@ -150,30 +157,38 @@
 				$href = $this->makeLink($i);
 			
 				if($i == $this->cur)
-					$numbers[] = "$opening_tag<a href='$href' class='pager_number pager_current'>$i</a>$closing_tag";
+					$numbers[] = "$opening_tag_active<a href='$href'>$i</a>$closing_tag";
 				else
-					$numbers[] = "$opening_tag<a href='$href' class='pager_number'>$i</a>$closing_tag";
+					$numbers[] = "$opening_tag<a href='$href'>$i</a>$closing_tag";
 			}
 		
 			$numbers = implode($this->seperator, $numbers);
 
 			if($this->cur == 1 && $this->numPages == 1)
-				return "<span class='pager_left pager_disabled'>Previous</span> $numbers <span class='pager_right pager_disabled'>Next</span>";
+				return "<li>Previous</li>
+						$numbers
+						<li>Next</li>";
 			elseif($this->cur == 1 && $this->numPages > 1)
 			{
 				$href = $this->makeLink($this->next);
-				return "<span class='pager_left pager_disabled'>Previous</span> $numbers <a href='$href' class='pager_right'>Next</a>";
+				return "<li class='disabled'><a>Previous</a></li>
+						$numbers
+						<li><a href='$href'>Next</a></li>";
 			}
 			elseif($this->cur == $this->numPages)
 			{
 				$href = $this->makeLink($this->prev);
-				return "<a href='$href' class='pager_left'>Previous</a> $numbers <span class='pager_right pager_disabled'>Next</span>";
+				return "<li><a href='$href'>Previous</a></li>
+						$numbers
+						<li class='disabled'><a>Next</a></li>";
 			}
 			else
 			{
 				$href_prev = $this->makeLink($this->prev);
 				$href_next = $this->makeLink($this->next);
-				return "<a href='$href_prev' class='pager_left'>Previous</a> $numbers <a href='$href_next' class='pager_right'>Next</a>";
+				return "<li><a href='$href_prev'>Previous</a></li>
+						$numbers
+						<li><a href='$href_next'>Next</a></li>";
 			}
 		}
 
@@ -202,8 +217,7 @@
 			if ($this->perPage > 0) {
 				return " limit $offset, {$this->perPage}";
 			}
-
-                        return " limit $offset, 100";
+			return " limit $offset, 100";
 		}
 		
 		function getOffset()

@@ -78,6 +78,17 @@
 		</div>
 
 		<div class="container">
+			<script type="text/javascript">
+			google_ad_client = "ca-pub-3896111714575810";
+			/* Pacer Archives - Footer */
+			google_ad_slot = "3080849889";
+			google_ad_width = 728;
+			google_ad_height = 90;
+			</script>
+			<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> </script>
+		</div>
+
+		<div class="container">
 			<footer>
 				<hr />
 				<p>The Pacer Archives (2002 - 2006) - <em>Not affiliated with the student newspaper.</em></p>
