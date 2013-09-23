@@ -21,7 +21,7 @@
 	<div class="col-md-3">
 		{if isset($issue_images[$section_name])}
 		{foreach $issue_images[$section_name] as $i => $image}
-		<div><a href="{$smarty.const.WEBROOT}/article/{$image.related_article}"><img src="{$smarty.const.WEBROOT}/assets/{$image.photo_src}" class="thumbnail" width="{if $i eq 0}210{else}90{/if}"></a></div>
+		<div><a href="{$smarty.const.WEBROOT}/article/{$image.related_article_title|@slugify}/{$image.related_article_id}"><img src="{$smarty.const.WEBROOT}/assets/{$image.photo_src}" class="thumbnail" width="{if $i eq 0}210{else}90{/if}" alt="{$image.related_article_title}" title="{$image.related_article_title}"></a></div>
 		{/foreach}
 		{/if}
 	</div>

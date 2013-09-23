@@ -14,7 +14,7 @@ endif;
 
 $Smarty->assign('article', $article);
 $Smarty->assign('title', $article->title);
-$Smarty->assign('description', trim(str_replace(array("\n","\r",'  '), ' ', $article->summary)) );
+$Smarty->assign('description', date('F j, Y', strtotime($article->issue_date)) . ' -- ' . trim(str_replace(array("\n","\r",'  '), ' ', $article->summary)) );
 
 /* Issue Data */
 $this_issue = new Issue($article->issue_date);

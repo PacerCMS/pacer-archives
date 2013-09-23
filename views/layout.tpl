@@ -16,6 +16,8 @@
 
 		<link rel="shortcut icon" href="{$smarty.const.WEBROOT}/assets/images/favicon.ico">
 
+		{block name=head}{/block}
+
 		{if $smarty.const.DEBUG eq false}
 		<script type="text/javascript">
 

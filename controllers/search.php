@@ -1,5 +1,7 @@
 <?php
 
+$Smarty->assign('description', 'Search article text and authors.');
+
 require DOCROOT . '/includes/class.pager.php';
 
 if (isset($_GET['q'])):

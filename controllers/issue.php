@@ -24,13 +24,25 @@ foreach ($article_list as $row):
 	$photo_src = $row->photo_src;
 	$photo_caption = $row->photo_caption;
 	$photo_credit = $row->photo_credit;
-	$related_article = $row->id;
-	if (!$photo_src): continue; endif;
-	$issue_images[$section][] = array('photo_src' => $photo_src, 'photo_caption' => $photo_caption, 'photo_credit' => $photo_credit, 'related_article' => $related_article);
+	$related_article_id = $row->id;
+	$related_article_title = $row->title;
+
+	if (!$photo_src) {
+		continue;
+	}
+
+	$issue_images[$section][] = array(
+		'photo_src' => $photo_src,
+		'photo_caption' => $photo_caption,
+		'photo_credit' => $photo_credit,
+		'related_article_id' => $related_article_id,
+		'related_article_title' => $related_article_title
+	);
 
 endforeach;
 $Smarty->assign('articles', $articles);
 $Smarty->assign('issue_images', $issue_images);
+$Smarty->assign('description', sprintf('%s - Volume %d, Issue %d', date('F j, Y', strtotime($issue_date)), $this_issue->volume, $this_issue->issue));
 
 // Render template
 $Smarty->display('issue.tpl');
