@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>{if isset($title)}{$title} | {/if}The Pacer Archives (2002 - 2006)</title>
+		<title>{if isset($title)}{$title} | {/if}The Pacer (2002-06)</title>
 		<meta name="description" content="{if isset($description)}{$description|escape}{/if}">
 
 		<!--[if lt IE 9]>

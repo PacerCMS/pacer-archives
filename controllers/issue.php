@@ -42,7 +42,7 @@ foreach ($article_list as $row):
 endforeach;
 $Smarty->assign('articles', $articles);
 $Smarty->assign('issue_images', $issue_images);
-$Smarty->assign('description', sprintf('%s - Volume %d, Issue %d', date('F j, Y', strtotime($issue_date)), $this_issue->volume, $this_issue->issue));
+$Smarty->assign('description', sprintf('Articles from The Pacer, %s - Volume %d, Issue %d', date('F j, Y', strtotime($issue_date)), $this_issue->volume, $this_issue->issue));
 
 // Render template
 $Smarty->display('issue.tpl');

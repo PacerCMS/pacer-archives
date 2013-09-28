@@ -17,7 +17,7 @@
 
 		{if $article->photo_src ne ''}
 		<div class="pull-right" style="width:255px; margin-left:2em;">
-			<div style="text-align:center;"><a href="{$smarty.const.WEBROOT}/assets/{$article->photo_src}"><img src="{$smarty.const.WEBROOT}/assets/{$article->photo_src}" alt="Credit: {$article->photo_credit}" title="{$article->photo_caption}" style="max-width:250px;"/></a></div>
+			<div style="text-align:center;"><a href="{$smarty.const.WEBROOT}/assets/{$article->photo_src}"><img src="{$smarty.const.WEBROOT}/assets/{$article->photo_src}" alt="Credit: {$article->photo_credit}" title="Caption: {$article->photo_caption}" style="max-width:250px;"/></a></div>
 			<blockquote>
 			<p>{$article->photo_caption|nl2br}</p>
 			{if $article->photo_credit ne ''}<small>Credit: {$article->photo_credit}</small>{/if}
