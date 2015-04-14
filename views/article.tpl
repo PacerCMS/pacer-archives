@@ -43,6 +43,10 @@
 	</script>
 </div>
 
-<script type="text/javascript">$('#volume-{$this_issue->volume}').show();</script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#volume-{$this_issue->volume}').show();
+});
+</script>
 
 {/block}
