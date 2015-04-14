@@ -33,18 +33,15 @@
 </div>
 
 <div class="col-md-3">
-	<div style="width:160px;margin-left:auto;margin-right:auto;">
-		<script type="text/javascript">
-		google_ad_client = "ca-pub-3896111714575810";
-		/* Pacer Archives - Right Side */
-		google_ad_slot = "8568980289";
-		google_ad_width = 160;
-		google_ad_height = 600;
-		</script>
-		<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> </script>
-	</div>
+	<!-- Pacer Archives - Right Side -->
+	<ins class="adsbygoogle hidden-xs hidden-sm"
+		style="display:inline-block;width:160px;height:600px"
+		data-ad-client="ca-pub-3896111714575810"
+		data-ad-slot="8568980289"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
 </div>
-
 
 <script type="text/javascript">$('#volume-{$this_issue->volume}').show();</script>
 

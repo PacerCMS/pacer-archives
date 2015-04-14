@@ -2,34 +2,33 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>{if isset($title)}{$title} | {/if}The Pacer (2002-06)</title>
 		<meta name="description" content="{if isset($description)}{$description|escape}{/if}">
 
-		<!--[if lt IE 9]>
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-
-		<link rel="stylesheet" href="{$smarty.const.WEBROOT}/assets/libraries/bootstrap/css/bootstrap.css" type="text/css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 		<link rel="stylesheet" href="{$smarty.const.WEBROOT}/assets/css/main.css" type="text/css">
 
 		<link rel="shortcut icon" href="{$smarty.const.WEBROOT}/assets/images/favicon.ico">
+
+		<!-- Google Ad Code -->
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 		{block name=head}{/block}
 
 		{if $smarty.const.DEBUG eq false}
 		<script type="text/javascript">
 
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-635661-27']);
-		  _gaq.push(['_trackPageview']);
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-635661-27']);
+			_gaq.push(['_trackPageview']);
 
-		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
 
 		</script>
 		{/if}
@@ -37,20 +36,41 @@
 	</head>
 
 	<body>
-		<div class="container">
 
-			<nav class="navbar navbar-default" role="navigation">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
-					<a class="navbar-brand" href="{$smarty.const.WEBROOT}/">The Pacer Archives (2002 - 2006)</a>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="{$smarty.const.WEBROOT}/">The Pacer Archives</a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="navbar">
 					<ul class="nav navbar-nav">
 						<li {if $Router->controller eq 'home'}class="active"{/if}><a href="{$smarty.const.WEBROOT}/">Home</a></li>
 						<li {if $Router->controller eq 'search'}class="active"{/if}><a href="{$smarty.const.WEBROOT}/search">Search</a></li>
 						<li {if $Router->controller eq 'about'}class="active"{/if}><a href="{$smarty.const.WEBROOT}/about">About</a></li>
 						<li {if $Router->controller eq 'contact'}class="active"{/if}><a href="{$smarty.const.WEBROOT}/contact">Contact</a></li>
 					</ul>
-					<p class="pull-right"></p>
-				</div>
-			</nav>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+
+		<!-- Pacer Archives - Mobile Ad -->
+		<ins class="adsbygoogle hidden-md hidden-lg"
+			style="display:inline-block;width:320px;height:100px"
+			data-ad-client="ca-pub-3896111714575810"
+			data-ad-slot="5948890688"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+
+		<div class="container">
 
 			<div class="col-md-3">
 				<div class="well">
@@ -81,16 +101,15 @@
 
 		<div class="container">
 			<hr />
-			<script type="text/javascript">
-			google_ad_client = "ca-pub-3896111714575810";
-			/* Pacer Archives - Footer */
-			google_ad_slot = "3080849889";
-			google_ad_width = 728;
-			google_ad_height = 90;
+			<!-- Pacer Archives - Responsive Footer -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-3896111714575810"
+			     data-ad-slot="5809289886"
+			     data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
 			</script>
-			<div style="Width:750px; margin-left:auto; margin-right: auto;">
-			<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> </script>
-			</div>
 			<hr />
 		</div>
 
@@ -99,6 +118,9 @@
 				<p>The Pacer Archives (2002 - 2006) - <em>Not affiliated with the student newspaper.</em></p>
 			</footer>
 		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 	</body>
 </html>
