@@ -10,6 +10,9 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 		<link rel="stylesheet" href="{$smarty.const.WEBROOT}/assets/css/main.css" type="text/css">
 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
 		<link rel="shortcut icon" href="{$smarty.const.WEBROOT}/assets/images/favicon.ico">
 
 		<!-- Google Ad Code -->
@@ -118,9 +121,6 @@
 				<p>The Pacer Archives (2002 - 2006) - <em>Not affiliated with the student newspaper.</em></p>
 			</footer>
 		</div>
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 	</body>
 </html>
