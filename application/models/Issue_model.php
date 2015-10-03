@@ -50,7 +50,7 @@ class Issue_model extends CI_Model {
 			return false;
 		}
 		$client = new GuzzleHttp\Client();
-		$response = $client->request('GET', 'https://archive.org/advancedsearch.php', array(
+		$response = $client->get('https://archive.org/advancedsearch.php', array(
 			'query' => array(
 				'output' => 'json',
 				'q' => sprintf('collection:(thepacer) volume:%d issue:%d', $issue->volume, $issue->issue)
