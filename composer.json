@@ -1,0 +1,15 @@
+{
+	"description": "The Pacer Archives",
+	"name": "stephenyeargin/pacer-archives",
+	"type": "project",
+	"homepage": "http://pacer.yearg.in",
+	"license": "MIT",
+	"require": {
+		"php": ">=5.2.4",
+		"smarty/smarty": "~3.1",
+		"guzzlehttp/guzzle": "~6.0"
+	},
+	"require-dev": {
+		"mikey179/vfsStream": "1.1.*"
+	}
+}
