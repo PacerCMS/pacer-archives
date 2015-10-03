@@ -2,16 +2,11 @@
 
 require './vendor/autoload.php';
 
-class Smartyci extends Smarty
-{
-    public function __construct()
-    {
+class Smartyci extends Smarty {
+    public function __construct() {
         parent::__construct();
-
-        $config =& get_config();
-
         $this->caching = 1;
-        $this->debugging = 1;
+        $this->debugging = ($ENV['ENVIRONMENT'] == 'development') ? 1 : 0;
         $this->setTemplateDir( APPPATH . 'views' );
         $this->setCompileDir( APPPATH . 'cache/smarty_c' );
         $this->setConfigDir( APPPATH . 'config/smarty' );
@@ -19,11 +14,9 @@ class Smartyci extends Smarty
     }
 
     //if specified template is cached then display template and exit, otherwise, do nothing.
-    public function useCached( $tpl, $cacheId = null )
-    {
-        if ( $this->isCached( $tpl, $cacheId ) )
-        {
-            $this->display( $tpl, $cacheId );
+    public function useCached( $tpl, $cacheId = null ) {
+        if ($this->isCached($tpl, $cacheId)) {
+            $this->display($tpl, $cacheId);
             exit();
         }
     }
