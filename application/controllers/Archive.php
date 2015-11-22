@@ -69,6 +69,11 @@ class Archive extends MY_Controller {
 			show_404();
 		endif;
 
+		/* Validate Slug */
+		if ($this->uri->segment(2) !== $article->slug) {
+			redirect(sprintf('/article/%s/%d', $article->slug, $article->article_id));
+		};
+
 		$this->smartyci->assign('article', $article);
 		$this->smartyci->assign('title', $article->title . ' | ' . date('n/j/Y', strtotime($article->issue_id)));
 		$this->smartyci->assign('description', date('n/j/Y', strtotime($article->issue_id)) . ' -- ' . trim(str_replace(array("\n","\r",'  '), ' ', $article->summary)));

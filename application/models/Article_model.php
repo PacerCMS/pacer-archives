@@ -21,6 +21,8 @@ class Article_model extends CI_Model {
 	public $keywords = '';
 	public $last_edited = '';
 
+	public $slug;
+
 	/**
 	 * Get Article
 	 *
@@ -32,7 +34,11 @@ class Article_model extends CI_Model {
 		$this->db->reset_query();
 		if ($article_id) {
 			$query = $this->db->get_where('articles', array('article_id' => $article_id));
-			return $query->row();
+			$article = $query->row();
+			if ($article) {
+				$article->slug = strtolower(url_title($article->title));
+			}
+			return $article;
 		}
 	}
 
