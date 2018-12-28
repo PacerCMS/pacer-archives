@@ -45,7 +45,7 @@ class Issue_model extends CI_Model {
 	/**
 	 * Get Internet Archive Data
 	 */
-	public function getInternetArchiveData($issue) {
+	public function getInternetArchiveData($issue) {		
 		if (!is_object($issue) || !is_numeric($issue->volume) || !is_numeric($issue->issue)) {
 			return false;
 		}

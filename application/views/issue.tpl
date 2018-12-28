@@ -7,7 +7,7 @@
 
 {if $archive_issue}
 <h2>Press Archive <small><a href="https://archive.org/details/{$archive_issue->identifier}" target="_blank">Open Issue</a></small></h2>
-<iframe src="https://archive.org/stream/{$archive_issue->identifier}?ui=embed#mode/2up" width="100%" height="320" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
+<iframe src="https://archive.org/stream/{$archive_issue->identifier}?ui=embed#mode/2up" width="100%" height="640" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
 <hr />
 {/if}
 
