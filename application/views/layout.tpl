@@ -12,9 +12,6 @@
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/assets/css/main.css" type="text/css">
 
-		<!-- Google Ad Code -->
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
 		{block name=head}{/block}
 
 		{if $smarty.const.DEBUG eq false}
@@ -61,17 +58,7 @@
 			</div><!-- /.container-fluid -->
 		</nav>
 
-		<!-- Pacer Archives - Mobile Ad -->
-		<ins class="adsbygoogle hidden-md hidden-lg"
-			style="display:inline-block;width:320px;height:100px"
-			data-ad-client="ca-pub-3896111714575810"
-			data-ad-slot="5948890688"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-
 		<div class="container">
-
 			<div class="col-md-3">
 				<div class="well">
 					{block name="sidebar"}
@@ -101,19 +88,6 @@
 
 		<div class="container">
 			<hr />
-			<!-- Pacer Archives - Responsive Footer -->
-			<ins class="adsbygoogle"
-			     style="display:block"
-			     data-ad-client="ca-pub-3896111714575810"
-			     data-ad-slot="5809289886"
-			     data-ad-format="auto"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
-			<hr />
-		</div>
-
-		<div class="container">
 			<footer>
 				<p>The Pacer Archives (2002 - 2006) - <em>Not affiliated with the student newspaper.</em></p>
 			</footer>

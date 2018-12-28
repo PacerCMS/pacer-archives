@@ -34,14 +34,7 @@
 </div>
 
 <div class="col-md-3">
-	<!-- Pacer Archives - Right Side -->
-	<ins class="adsbygoogle hidden-xs hidden-sm"
-		style="display:inline-block;width:160px;height:600px"
-		data-ad-client="ca-pub-3896111714575810"
-		data-ad-slot="8568980289"></ins>
-	<script>
-	(adsbygoogle = window.adsbygoogle || []).push({});
-	</script>
+
 </div>
 
 <script type="text/javascript">
