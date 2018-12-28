@@ -53,7 +53,7 @@ class Issue_model extends CI_Model {
 		$response = $client->get('https://archive.org/advancedsearch.php', array(
 			'query' => array(
 				'output' => 'json',
-				'q' => sprintf('collection:(thepacer) volume:%d issue:%d', $issue->volume, $issue->issue)
+				'q' => sprintf('collection:(thepacer) date:%s', $issue->date)
 			)
 		));
 		$contents = $response->getBody()->getContents();
@@ -68,5 +68,4 @@ class Issue_model extends CI_Model {
 			return false;
 		}
 	}
-
 }
